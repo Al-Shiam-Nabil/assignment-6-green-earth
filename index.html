@@ -46,17 +46,31 @@
     <header>
         <!-- navbar -->
       <div class="bg-secondary">
-        <nav
-          class="flex flex-col sm:flex-row gap-4 justify-between items-center max-w-[1650px] mx-auto py-3 px-4"
-        >
-          <!-- logo/name -->
-          <div>
+        <div class="navbar px-4">
+  <div class="navbar-start">
+    <div class="dropdown">
+      <div tabindex="0" role="button" class="mr-2.5 lg:hidden">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="white"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M4 6h16M4 12h8m-8 6h16" /> </svg>
+      </div>
+      <ul
+        tabindex="0"
+        class="menu menu-lg dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-3 shadow">
+       <li><a class="hover:text-btn-secondary" href="">About</a></li>
+              <li><a class="hover:text-btn-secondary" href="">Gallery</a></li>
+              <li>
+                <a class="hover:text-btn-secondary" href="">Plant a Tree</a>
+              </li>
+      </ul>
+    </div>
+    <!-- logo -->
+      <div>
             <h3 class="text-white font-bold text-xl">Green Earth</h3>
           </div>
 
-          <!-- Menu items in the center -->
-          <div>
-            <ul
+
+  </div>
+  <div class="navbar-center hidden lg:flex">
+  <ul
               class="flex justify-center items-center flex-wrap gap-x-6 gap-y-1 text-white font-medium"
             >
               <li><a class="hover:text-btn-secondary" href="">About</a></li>
@@ -65,22 +79,21 @@
                 <a class="hover:text-btn-secondary" href="">Plant a Tree</a>
               </li>
             </ul>
-          </div>
-
-          <!-- Plant a Tree button on the right -->
-          <div class="w-full sm:w-auto">
-            <button
-              class="btn w-full sm:w-auto outline-none border-none bg-btn-secondary text-base rounded-3xl text-secondary font-medium hover:bg-[#FDEC15]"
+  </div>
+  <div class="navbar-end">
+                <button
+              class="btn outline-none border-none bg-btn-secondary text-base rounded-3xl text-secondary font-medium hover:bg-[#FDEC15]"
             >
               Plant a Tree
             </button>
-          </div>
-        </nav>
+
+  </div>
+</div>
       </div>
      
 <!-- text-center bg-[#CFF0DC] h-[380px] flex flex-col justify-center items-center space-y-4 bg-[url(./assets/hero-leaf1.png),_url(./assets/hero-leaf2.png)] bg-no-repeat bg-position-[bottom_left,bottom_right] -->
       <!--  Banner -->
-        <div class="flex sm:flex-col lg:flex-row bg-[#CFF0DC] px-4">
+        <div class="flex sm:flex-col lg:flex-row bg-[#CFF0DC] px-4 lg:px-0">
             <section class="flex-1 hidden lg:flex items-end ">
                 <img src="./assets/hero-leaf1.png" alt="leaf image" class="lg:h-full  sm:object-contain lg:object-cover object-right ">
             </section>
