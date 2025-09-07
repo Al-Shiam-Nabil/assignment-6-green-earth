@@ -22,12 +22,39 @@
 
  <style type="text/tailwindcss">
       @theme {
-        --font-inter:font-family: "Inter", sans-serif;
+        --font-inter:"Inter", sans-serif;
+        --color-primary:#1F2937;
+        --color-secondary:#15803D;
+        --color-btn-secondary:#FACC15;
       }
     </style>
 
 </head>
-<body>
+<body class="font-inter text-primary max-w-[1920px] mx-auto">
+    <header>
+       <div class="bg-secondary">
+         <nav class="flex flex-col sm:flex-row gap-4 justify-between items-center max-w-[1650px] mx-auto py-3 px-4">
+            <!-- logo/name -->
+             <div>
+                <h3 class="text-white font-bold text-xl">Green Earth</h3>
+             </div>
+
+             <!-- Menu items in the center -->
+              <div>
+                <ul class="flex justify-center items-center flex-wrap gap-x-6  gap-y-1 text-white font-medium ">
+                    <li><a class="hover:text-btn-secondary" href="">About</a></li>
+                    <li><a class="hover:text-btn-secondary" href="">Gallery</a></li>
+                    <li><a class="hover:text-btn-secondary" href="">Plant a Tree</a></li>
+                </ul>
+              </div>
+
+              <!-- Plant a Tree button on the right -->
+               <div class="w-full sm:w-auto">
+                <button class="btn w-full sm:w-auto outline-none border-none bg-btn-secondary text-base rounded-3xl text-secondary font-medium hover:bg-[#FDEC15]">Plant a Tree</button>
+               </div>
+        </nav>
+       </div>
+    </header>
     
 </body>
 </html>
