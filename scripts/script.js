@@ -30,7 +30,7 @@ const displayAllCategories = (category) => {
   category.forEach((cat) => {
     categoryList.innerHTML += `
         
-        <li id="${cat.id}" class="hover:bg-secondary border md:border-none border-[#15803D] hover:text-white px-2.5 rounded-md py-1.5 cursor-pointer">${cat.category_name}</li>
+        <li id="${cat.id}" class="hover:bg-secondary border md:border-none border-[#15803D] hover:text-white px-2.5 rounded-md py-2.5 sm:py-1.5 cursor-pointer text-sm sm:text-base">${cat.category_name}</li>
 
         `;
   });
