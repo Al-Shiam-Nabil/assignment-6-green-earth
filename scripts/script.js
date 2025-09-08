@@ -6,8 +6,8 @@ const addCartContainer = getId("add-cart-container");
 const totalPriceContainer = getId("total-price-container");
 const totalPrice = getId("total-price");
 
-const cartArr = [];
-  let sum=0;
+let cartArr = [];
+let sum = 0;
 
 //  loading spinner
 const loadingSpinner = (id, loadStatus) => {
@@ -218,7 +218,6 @@ cardContainer.addEventListener("click", (e) => {
         );
         const treeId = e.target.parentElement.id;
         let treeCount = 1;
-      
 
         const found = cartArr.find((tree) => tree.treeId === treeId);
 
@@ -233,7 +232,7 @@ cardContainer.addEventListener("click", (e) => {
             });
         }
 
-   
+        alert(`${treeName} added to the cart.`);
 
         if (cartArr.length > 0) {
             totalPriceContainer.classList.replace("hidden", "flex");
@@ -259,8 +258,8 @@ const displayCart = (carts) => {
                                     <i class="fa-solid fa-bangladeshi-taka-sign"></i><span >${cart.treePrice}</span> x <span>${cart.treeCount}</span>
                                 </div>
                             </div>
-                            <div class="text-sm text-gray-500 hover:text-black cursor-pointer">
-                                <i class="fa-solid fa-xmark"></i>
+                            <div onclick="removeCartFunc('${cart.treeId}')" class="text-sm text-gray-500 hover:text-black cursor-pointer ">
+                                <i class="fa-solid fa-xmark remove-cart-btn"></i>
                             </div>
                         </div>
 
@@ -269,14 +268,30 @@ const displayCart = (carts) => {
 };
 
 // total price
-const totalPriceFunc=(items)=>{
-   sum=0;
- for (const element of items) {
-  sum=sum+element.treePrice*element.treeCount  
- }
-totalPrice.innerText=sum;
-}
+const totalPriceFunc = (items) => {
+    sum = 0;
+    for (const element of items) {
+        sum = sum + element.treePrice * element.treeCount;
+    }
+    totalPrice.innerText = sum;
+};
 
 // remove from cart
+const removeCartFunc = (id) => {
+    const filteredCartArr = cartArr.filter((e) => {
+        return e.treeId !== id;
+    });
+
+    cartArr = filteredCartArr;
+    displayCart(cartArr);
+    totalPriceFunc(cartArr);
+
+    if (cartArr.length > 0) {
+        totalPriceContainer.classList.replace("hidden", "flex");
+    } else {
+        totalPriceContainer.classList.replace("flex", "hidden");
+    }
+};
+
 loadAllPlants();
 loadAllCategories();
