@@ -139,50 +139,17 @@
                 <section class="col-span-full lg:col-span-1 bg-white p-5 lg:p-2 rounded-lg">
                     <h3 class="text-xl font-semibold mb-3">Your Cart</h3>
                     <!-- cart container -->
-                    <section class="flex flex-col gap-2.5">
+                    <section id="add-cart-container" class="flex flex-col gap-2.5">
                         <!-- cart -->
-                        <div class="flex justify-between items-center bg-[#F0FDF4] p-4 lg:p-2 rounded-lg">
-                            <div class="space-y-2">
-                                <h4 class="text-sm font-semibold">Ornamental Plant</h4>
-                                <div class="text-sm text-gray-500">
-                                    <i class="fa-solid fa-bangladeshi-taka-sign"></i><span>500</span> x <span>1</span>
-                                </div>
-                            </div>
-                            <div class="text-sm text-gray-500 hover:text-black cursor-pointer">
-                                <i class="fa-solid fa-xmark"></i>
-                            </div>
-                        </div>
+                      
 
-                        <!-- cart -->
-                        <div class="flex justify-between items-center bg-[#F0FDF4] p-4 lg:p-2 rounded-lg">
-                            <div class="space-y-2">
-                                <h4 class="text-sm font-semibold">Ornamental Plant</h4>
-                                <div class="text-sm text-gray-500">
-                                    <i class="fa-solid fa-bangladeshi-taka-sign"></i><span>500</span> x <span>1</span>
-                                </div>
-                            </div>
-                            <div class="text-sm text-gray-500 hover:text-black cursor-pointer">
-                                <i class="fa-solid fa-xmark"></i>
-                            </div>
-                        </div>
-                        <!-- cart -->
-                        <div class="flex justify-between items-center bg-[#F0FDF4] p-4 lg:p-2 rounded-lg">
-                            <div class="space-y-2">
-                                <h4 class="text-sm font-semibold">Ornamental Plant</h4>
-                                <div class="text-sm text-gray-500">
-                                    <i class="fa-solid fa-bangladeshi-taka-sign"></i><span>500</span> x <span>1</span>
-                                </div>
-                            </div>
-                            <div class="text-sm text-gray-500 hover:text-black cursor-pointer">
-                                <i class="fa-solid fa-xmark"></i>
-                            </div>
-                        </div>
+                        
                     </section>
-                    <!-- total price -->
-                    <div class="border-t border-gray-300 mt-3 flex justify-between items-center pt-2">
+                    <!-- total price -->                   
+                         <div id="total-price-container" class="border-t border-gray-300 mt-3 hidden justify-between items-center pt-2">
                         <h3 class="font-semibold">Total :</h3>
                         <p>
-                            <i class="fa-solid fa-bangladeshi-taka-sign"></i><span class="font-semibold">500</span>
+                            <i class="fa-solid fa-bangladeshi-taka-sign"></i><span class="font-semibold" id="total-price" >0</span>
                         </p>
                     </div>
                 </section>
@@ -277,9 +244,7 @@
         </section>
 
 
-        <!-- show modal for details -->
          <!-- Open the modal using ID.showModal() method -->
-<!-- <button class="btn" onclick="my_modal_5.showModal()">open modal</button> -->
 <dialog id="details_modal" class="modal modal-bottom sm:modal-middle">
 
 </dialog>

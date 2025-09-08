@@ -2,6 +2,12 @@ const getId = (id) => document.getElementById(id);
 const categoryList = getId("category-list");
 const cardContainer = getId("card-container");
 const detailsModal = getId("details_modal");
+const addCartContainer = getId("add-cart-container");
+const totalPriceContainer = getId("total-price-container");
+const totalPrice = getId("total-price");
+
+const cartArr = [];
+  let sum=0;
 
 //  loading spinner
 const loadingSpinner = (id, loadStatus) => {
@@ -203,5 +209,74 @@ const displayPlantDetails = (plant) => {
     detailsModal.showModal();
 };
 
+// add to the card
+cardContainer.addEventListener("click", (e) => {
+    if (e.target.innerText === "Add to Cart") {
+        const treeName = e.target.parentElement.children[1].innerText;
+        const treePrice = Number(
+            e.target.parentElement.children[3].children[1].children[1].innerText
+        );
+        const treeId = e.target.parentElement.id;
+        let treeCount = 1;
+      
+
+        const found = cartArr.find((tree) => tree.treeId === treeId);
+
+        if (found) {
+            found.treeCount += 1;
+        } else {
+            cartArr.push({
+                treeName,
+                treePrice,
+                treeId,
+                treeCount,
+            });
+        }
+
+   
+
+        if (cartArr.length > 0) {
+            totalPriceContainer.classList.replace("hidden", "flex");
+        } else {
+            totalPriceContainer.classList.replace("flex", "hidden");
+        }
+
+        displayCart(cartArr);
+        totalPriceFunc(cartArr);
+    }
+});
+
+// display cart
+const displayCart = (carts) => {
+    addCartContainer.innerHTML = "";
+    carts.forEach((cart) => {
+        addCartContainer.innerHTML += `
+
+  <div id="${cart.treeId}" class="flex justify-between items-center bg-[#F0FDF4] p-4 lg:p-2 rounded-lg">
+                            <div class="space-y-2">
+                                <h4 class="text-sm font-semibold">${cart.treeName}</h4>
+                                <div class="text-sm text-gray-500">
+                                    <i class="fa-solid fa-bangladeshi-taka-sign"></i><span >${cart.treePrice}</span> x <span>${cart.treeCount}</span>
+                                </div>
+                            </div>
+                            <div class="text-sm text-gray-500 hover:text-black cursor-pointer">
+                                <i class="fa-solid fa-xmark"></i>
+                            </div>
+                        </div>
+
+`;
+    });
+};
+
+// total price
+const totalPriceFunc=(items)=>{
+   sum=0;
+ for (const element of items) {
+  sum=sum+element.treePrice*element.treeCount  
+ }
+totalPrice.innerText=sum;
+}
+
+// remove from cart
 loadAllPlants();
 loadAllCategories();
