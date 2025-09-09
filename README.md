@@ -25,6 +25,8 @@
 
 #### 3) What are arrow functions in ES6?
 
+**Answer:** Arrow functions were introduced in ES6. They provide a shorter way to write functions, and nowadays many developers use arrow functions in their code.In arrow functions, we cannot use this .When we declare a traditional function, we can call it both before and after its declaration because of hoisting.However, an arrow function must be called after it is declared.Arrow functions also do not have their own arguments object.
+
 #### 4) How does destructuring assignment work in ES6?
 
 #### 5) Explain template literals in ES6. How are they different from string concatenation?
