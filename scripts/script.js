@@ -76,10 +76,10 @@ const displayAllPlants = (plants) => {
         cardContainer.innerHTML += `
         
          <section id="${plant.id
-            }" class="bg-white p-5 sm:p-3 xl:p-4 rounded-lg space-y-3 h-[500px] sm:h-[450px] ">
+            }" class="bg-white p-5 sm:p-3 xl:p-4 rounded-lg space-y-3 h-[515px] sm:h-[455px] lg:h-[380px] xl:h-[455px]">
                         <img src="${plant.image ? plant.image : "--"}" alt="${plant.name
             } image"
-                            class="h-[300px] sm:h-[250px] object-cover object-center rounded-lg bg-[#EDEDED] w-full" />
+                            class="h-[300px] sm:h-[250px] lg:h-[180px] xl:h-[250px] object-cover object-center rounded-lg bg-[#EDEDED] w-full" />
                         <h3 onclick="loadPlantDetails(${plant.id
             })" class="text-sm font-semibold cursor-pointer hover:underline inline-block">
                            ${plant.name ? plant.name : "--"}
