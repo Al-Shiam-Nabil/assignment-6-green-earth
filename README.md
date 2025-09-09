@@ -29,4 +29,34 @@
 
 #### 4) How does destructuring assignment work in ES6?
 
+**Answer:** Destructuring assignment was introduced in ES6.it is use for unpack values from arrays or properties from object.it is much more easier  to unpack values form Arrays and properties from object.
+
+```
+const fruits = ["Apple", "Banana", "Mango"];
+
+// Traditional
+const first = fruits[0];
+const second = fruits[1];
+
+// Destructuring 
+const [a, b, c] = fruits;
+console.log(a); // "Apple"
+console.log(b); // "Banana"
+console.log(c); // "Mango"
+
+// Object
+const person = { name: "Nabil", age: 24, country: "Bangladesh" };
+
+// Traditional
+const name1 = person.name;
+const age1 = person.age;
+
+// Destructuring
+const { name, age, country } = person;
+console.log(name);   // "Nabil"
+console.log(age);    // 24
+console.log(country);// "Bangladesh"
+
+```
+
 #### 5) Explain template literals in ES6. How are they different from string concatenation?
