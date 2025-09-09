@@ -13,11 +13,15 @@
   **const:** const is also block-scoped.It was introduced in ES6.Its value cannot be updated and it cannot be redeclared.Like let, const is hoisted but remains in the Temporal Dead Zone, so you cannot access it before initialization.
 
 
-
-
-
-
 #### 2) What is the difference between map(), forEach(), and filter()? 
+
+**Answer:** map(), forEach(), and filter() are useful methods for arrays, but they are used for different purposes.
+
+**map():** map() is an array method that returns a new array.If we use a traditional loop, the code becomes longer, but using map() makes the code shorter and cleaner.It is generally used when we want to transform or update each element and return a new array.
+
+**forEach():** forEach() is also used for looping through an array.It works similarly to map(), but it does not return anything.It is mainly used when we just want to perform an action on each element without returning a new array.
+
+**filter():** filter() is used to filter out specific elements from an array based on a condition.It returns a new array as the output.Using filter() makes the code shorter and more readable compared to a traditional loop.
 
 #### 3) What are arrow functions in ES6?
 
