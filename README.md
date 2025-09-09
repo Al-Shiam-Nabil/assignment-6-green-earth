@@ -1,4 +1,4 @@
-#### 7)answer the following question-
+#### answer the following question-
 
 #### 1) What is the difference between var, let, and const?
 
